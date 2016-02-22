@@ -6,7 +6,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
  
 	<groupId>de.biomedical-imaging.imagej</groupId>
 	<artifactId>ij_nanotrackj</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<packaging>jar</packaging>
 	
 	<parent>
