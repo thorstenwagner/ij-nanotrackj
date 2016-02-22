@@ -5,7 +5,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
  
 	<groupId>de.biomedical-imaging.imagej</groupId>
-	<artifactId>ij_trackmate_viewer</artifactId>
+	<artifactId>ij_nanotrackj</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	
@@ -28,6 +28,16 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     		<groupId>de.biomedical-imaging.ij</groupId>
     		<artifactId>ij_blob</artifactId>
     		<version>1.4.8</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-math3</artifactId>
+		    <version>3.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.jfree</groupId>
+		    <artifactId>jfreechart</artifactId>
+		    <version>1.0.19</version>
 		</dependency>
 	</dependencies>
 	<developers>
