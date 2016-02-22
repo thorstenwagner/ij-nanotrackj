@@ -209,7 +209,7 @@ public class NanoTrackJ_ implements PlugInFilter {
 		gd.addCheckbox("Draw tracks", doDrawtracks);
 		gd.addCheckbox("Size distribution estimation by Walker's method (WM)", useWalker);
 		gd.addNumericField("Maximum Diameter (WM only, 0 = auto)", maxWalkerHistogrammDiameter, 0);
-		gd.addHelp("https://dl.dropboxusercontent.com/u/560426/imagej/nanotrackj/nanotrackj.html");
+		gd.addHelp("http://fiji.sc/NanoTrackJ");
 
 		NTADialogListener ntaListener = new NTADialogListener();
 		gd.addDialogListener(ntaListener);
