@@ -6,7 +6,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
  
 	<groupId>de.biomedical-imaging.imagej</groupId>
 	<artifactId>ij_nanotrackj</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 	
 	<parent>
@@ -38,6 +38,11 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		    <groupId>org.jfree</groupId>
 		    <artifactId>jfreechart</artifactId>
 		    <version>1.0.19</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
 		</dependency>
 	</dependencies>
 	<developers>
