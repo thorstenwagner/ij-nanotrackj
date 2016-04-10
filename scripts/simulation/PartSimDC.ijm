@@ -1,4 +1,4 @@
-// This imagej macro simulates brownian motion of particles by specifing their diffusion coefficient
+// This script simulates brownian motion of particles by specifing their diffusion coefficient
 // Author: Thorsten Wagner (wagner at biomedical-imaging dot de)
 
 Dialog.create("NanoSim");
@@ -14,7 +14,7 @@ Dialog.show();
 slices = Dialog.getNumber();
 iwidth=Dialog.getNumber();
 iheight=Dialog.getNumber();
-framerate =  Dialog.getNumber();			// [s]
+framerate =  Dialog.getNumber();		// [s]
 dc = Dialog.getNumber() * pow(10,-14); 		// [10^-10 m^2 /s]
 anzpart = Dialog.getNumber();
 driftfactor = Dialog.getNumber();	
@@ -43,9 +43,9 @@ for(j=0; j<anzpart;j++){
 	for(i = 2; i <= slices; i++){
 	   setSlice(i);
 	   u = random;
-	   alpha = random*2*PI;
-	   steplength = sqrt(-4*dc*(1/framerate)*log(1-u));
-	   steplength = steplength* 1/pxsize; 
+	   alpha = random*2*PI;					// Draw random direction
+	   steplength = sqrt(-4*dc*(1/framerate)*log(1-u)); 	// Draw random steplength
+	   steplength = steplength* 1/pxsize; 			// Convert it in pixel
 	   x=x+cos(alpha)*steplength + dx;
 	   y=y+sin(alpha)*steplength + dy;		
 	   if(x>iwidth){
