@@ -1,4 +1,11 @@
-// This script simulates brownian motion of particles by specifing their diffusion coefficient
+// This script simulates brownian motion of particles by specifing their diffusion coefficient.
+// The steplength are drawn from the probability density function of the real displacements
+// as specified in formula (9) in 
+//
+// Michalet, X., 2010. Mean square displacement analysis of 
+// single-particle trajectories with localization error: Brownian motion in an isotropic 
+// medium. Physical Review E, 82(4), p.041914.
+//
 // Author: Thorsten Wagner (wagner at biomedical-imaging dot de)
 
 Dialog.create("NanoSim");
@@ -44,7 +51,7 @@ for(j=0; j<anzpart;j++){
 	   setSlice(i);
 	   u = random;
 	   alpha = random*2*PI;					// Draw random direction
-	   steplength = sqrt(-4*dc*(1/framerate)*log(1-u)); 	// Draw random steplength
+	   steplength = sqrt(-4*dc*(1/framerate)*log(1-u)); 	// Draw random steplength, see
 	   steplength = steplength* 1/pxsize; 			// Convert it in pixel
 	   x=x+cos(alpha)*steplength + dx;
 	   y=y+sin(alpha)*steplength + dy;		
