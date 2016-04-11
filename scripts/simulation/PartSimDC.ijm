@@ -55,6 +55,9 @@ dy=sin(driftDirection)*drift;
 width = 5;
 height = 5;
 
+/*
+ * Simulation
+ */
 setBatchMode(true)
 setForegroundColor(0, 0, 0);
 for(j=0; j<anzpart;j++){
