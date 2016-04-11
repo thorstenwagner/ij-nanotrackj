@@ -31,7 +31,6 @@ run("Hyperstack...", "title=HyperStack type=8-bit display=Grayscale width="+iwid
 Stack.setFrameRate(1/framerate)
 run("Invert", "stack");
 meanStepLength = sqrt(3.14159)/sqrt(framerate/dc) * 1/pxsize; 
-print(sqrt(3.14159)/sqrt(framerate/dc));
 drift = driftfactor*meanStepLength;
 driftDirection = random*2*PI;
 dx=cos(driftDirection)*drift;
