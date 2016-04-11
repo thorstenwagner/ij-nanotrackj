@@ -8,6 +8,9 @@
 //
 // Author: Thorsten Wagner (wagner at biomedical-imaging dot de)
 
+/*
+ * GUI
+ */
 Dialog.create("NanoSim");
 Dialog.addNumber("Number of Frames:", 100);
 Dialog.addNumber("Framewidth:", 800);
@@ -17,24 +20,38 @@ Dialog.addNumber("Diffusion Coefficient [10^-10 cm^2/s]:", 600);
 Dialog.addNumber("Number of Particels", 2);
 Dialog.addSlider("Relative Drift", 0.0, 1.00001, 0.0);
 Dialog.addNumber("Pixelsize [nm]", 166);
+Dialog.addNumber("Seed", floor(random*1000));
 Dialog.show();
 slices = Dialog.getNumber();
 iwidth=Dialog.getNumber();
 iheight=Dialog.getNumber();
-framerate =  Dialog.getNumber();		// [s]
-dc = Dialog.getNumber() * pow(10,-14); 		// [10^-10 m^2 /s]
+framerate =  Dialog.getNumber();			// [s]
+dc = Dialog.getNumber() * pow(10,-14); 		// [m^2 /s]
 anzpart = Dialog.getNumber();
 driftfactor = Dialog.getNumber();	
 pxsize = Dialog.getNumber() * pow(10,-9);	// [m]
+seed = Dialog.getNumber();
+random("Seed",seed);
 
+/*
+ * Generate Image
+ */
 run("Hyperstack...", "title=HyperStack type=8-bit display=Grayscale width="+iwidth+" height="+iheight+" channels=1 slices="+slices+" frames=1");
 Stack.setFrameRate(1/framerate)
 run("Invert", "stack");
+
+/*
+ * Setup drift
+ */
 meanStepLength = sqrt(3.14159)/sqrt(framerate/dc) * 1/pxsize; 
 drift = driftfactor*meanStepLength;
 driftDirection = random*2*PI;
 dx=cos(driftDirection)*drift;
 dy=sin(driftDirection)*drift;
+
+/*
+ * Spot size
+ */
 width = 5;
 height = 5;
 
@@ -49,9 +66,9 @@ for(j=0; j<anzpart;j++){
 	for(i = 2; i <= slices; i++){
 	   setSlice(i);
 	   u = random;
-	   alpha = random*2*PI;					// Draw random direction
-	   steplength = sqrt(-4*dc*(1/framerate)*log(1-u)); 	// Draw random steplength, see
-	   steplength = steplength* 1/pxsize; 			// Convert it in pixel
+	   alpha = random*2*PI;								// Draw random direction
+	   steplength = sqrt(-4*dc*(1/framerate)*log(1-u)); // Draw random steplength, see
+	   steplength = steplength* 1/pxsize; 				// Convert it in pixel
 	   x=x+cos(alpha)*steplength + dx;
 	   y=y+sin(alpha)*steplength + dy;		
 	   if(x>iwidth){
