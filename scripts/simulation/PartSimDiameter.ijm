@@ -18,7 +18,7 @@ Dialog.addNumber("Image Width:",800);
 Dialog.addNumber("Image Hight:",600);
 Dialog.addNumber("Framerate [1/s]:", 30);
 Dialog.addNumber("Temperature [C°]:", 22);
-Dialog.addNumber("Particlequalities", 2);
+Dialog.addNumber("Particlequalities", 1);
 Dialog.addSlider("Relative Drift", 0, 1.00001, 0);
 Dialog.addNumber("Pixelsize [nm]", 166);
 
