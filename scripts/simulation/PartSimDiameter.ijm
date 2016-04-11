@@ -80,6 +80,9 @@ setMetadata("Info", "Diameter " + diaString + ",Relative drift " +driftfactor+ "
 width = 5;		//px
 height = 5;		//px
 
+/*
+ * Simulation
+ */
 setBatchMode(true)
 setForegroundColor(255, 255, 255);
 for(k=0; k<anzPartQuality;k++){
