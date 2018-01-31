@@ -1,4 +1,4 @@
-#NanoTrackJ
+# NanoTrackJ
 NanoTrackJ is an ImageJ/Fiji plugin to characterize the size of nanoparticles by its diffusion trajectories.
 
 If you are using NanoTrackJ in a scientific publication, please cite: 
